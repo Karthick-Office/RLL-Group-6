@@ -1,52 +1,38 @@
 package com.ecommerce.utilities;
-
+import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ExcelDataProvider {
-    private static final String testDataPath = "/RLLGroup6/resources/testData.xlsx";
 
-    public static Object[][] getTestData(String sheetName) {
-        Object[][] data = null;
-        try (FileInputStream fis = new FileInputStream(new File(testDataPath));
-             Workbook workbook = new XSSFWorkbook(fis)) {
-            Sheet sheet = workbook.getSheet(sheetName);
-            int rowCount = sheet.getPhysicalNumberOfRows();
-            int colCount = sheet.getRow(0).getPhysicalNumberOfCells();
+	static Workbook book;
+	static Sheet sheet;
+	public static String testdata_sheet_path = "C:\\Users\\karth\\eclipse-workspace\\RLLGroup6\\resources\\testData.xlsx";
+	public static List<Map<String,String>> getTestData(String sheetName ) throws EncryptedDocumentException, IOException
+	{
+	
+		FileInputStream file = null;
+		file =	new FileInputStream(testdata_sheet_path);
+		book = WorkbookFactory.create(file);
+		sheet = book.getSheet(sheetName);
+		List<Map<String,String>> data = new ArrayList<>();	
+		for(int i=0;i<sheet.getLastRowNum();i++) {
+			LinkedHashMap<String,String> lob = new LinkedHashMap<>();
+			for(int j=0;j<sheet.getRow(i).getLastCellNum();j++) {
+			String Headername = sheet.getRow(sheet.getFirstRowNum()).getCell(j).getStringCellValue();
+	        lob.put(Headername, sheet.getRow(i+1).getCell(j).toString());
 
-            data = new Object[rowCount - 1][colCount];
+			}
+			data.add(lob);
+		}
+	
+		return data;
+		
+	}
 
-            for (int i = 1; i < rowCount; i++) {
-                Row row = sheet.getRow(i);
-                for (int j = 0; j < colCount; j++) {
-                    Cell cell = row.getCell(j);
-                    data[i - 1][j] = getCellValue(cell);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return data;
-    }
-
-    private static Object getCellValue(Cell cell) {
-        switch (cell.getCellType()) {
-            case STRING:
-                return cell.getStringCellValue();
-            case NUMERIC:
-                if (DateUtil.isCellDateFormatted(cell)) {
-                    return cell.getDateCellValue();
-                } else {
-                    return cell.getNumericCellValue();
-                }
-            case BOOLEAN:
-                return cell.getBooleanCellValue();
-            default:
-                return null;
-        }
-    }
 }

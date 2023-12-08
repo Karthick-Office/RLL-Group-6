@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-07T17:39:05 IST" name="Cucumber TestNG Suite" finished-at="2023-12-07T17:39:06 IST" duration-ms="820">
+  <suite started-at="2023-12-08T12:17:08 IST" name="Default suite" finished-at="2023-12-08T12:17:08 IST" duration-ms="904">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.ecommerce.runners.TestRunner@19e4653c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-12-07T17:39:05 IST" name="Cucumber Tests" finished-at="2023-12-07T17:39:06 IST" duration-ms="820">
+    <test started-at="2023-12-08T12:17:08 IST" name="Default test" finished-at="2023-12-08T12:17:08 IST" duration-ms="904">
       <class name="com.ecommerce.runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.ecommerce.runners.TestRunner@19e4653c]" started-at="2023-12-07T17:39:05 IST" name="setUpClass" finished-at="2023-12-07T17:39:05 IST" duration-ms="732" status="FAIL">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.ecommerce.runners.TestRunner@19e4653c]" started-at="2023-12-08T12:17:08 IST" name="setUpClass" finished-at="2023-12-08T12:17:08 IST" duration-ms="854" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@758a34ce]]>
+                <![CDATA[org.testng.TestRunner@5fd9b663]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[path must exist: C:\Users\karth\eclipse-workspace\RLLGroup6\src\resources\features]]>
+              <![CDATA[path must exist: C:\RLLGroup6\features\contact.feature]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: path must exist: C:\Users\karth\eclipse-workspace\RLLGroup6\src\resources\features
+              <![CDATA[java.lang.IllegalArgumentException: path must exist: C:\RLLGroup6\features\contact.feature
 at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:49)
 at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:31)
 at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
@@ -62,11 +62,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.ecommerce.runners.TestRunner@19e4653c]" started-at="2023-12-07T17:39:06 IST" name="tearDownClass" finished-at="2023-12-07T17:39:06 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.ecommerce.runners.TestRunner@19e4653c]" started-at="2023-12-08T12:17:08 IST" name="tearDownClass" finished-at="2023-12-08T12:17:08 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- com.ecommerce.runners.TestRunner -->
-    </test> <!-- Cucumber Tests -->
-  </suite> <!-- Cucumber TestNG Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

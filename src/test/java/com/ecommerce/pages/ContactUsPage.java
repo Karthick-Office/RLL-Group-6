@@ -1,38 +1,37 @@
 package com.ecommerce.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class ContactUsPage{
-    private WebDriver driver;
     @FindBy(id = "contactFormName")
-    private WebElement contactFormName;
+    WebElement contactFormName;
 
     @FindBy(id = "contactFormEmail")
-    private WebElement contactFormEmail;
+    WebElement contactFormEmail;
 
     @FindBy(id = "contactFormTelephone")
-    private WebElement contactFormPhone;
+    WebElement contactFormPhone;
 
     @FindBy(id = "contactFormMessage")
-    private WebElement contactFormMessage;
+    WebElement contactFormMessage;
 
     @FindBy(id = "contactFormSubmit")
-    private WebElement contactFormSubmit;
+    WebElement contactFormSubmit;
 
     @FindBy(xpath = "//*[text() = 'Contact us']")
-    private WebElement contact;
-
+    WebElement contact;
+    
+    @FindBy(css = ".notification > p")
+    WebElement confirmationMessage;
+    
     public ContactUsPage(WebDriver driver) {
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public void navigateToContactUs() {
-        contact.click();
-    }
+ 
     public void fillContactForm(String name, String email, String phone, String message) {
         contactFormName.sendKeys(name);
         contactFormEmail.sendKeys(email);
@@ -45,7 +44,9 @@ public class ContactUsPage{
     }
 
     public boolean isConfirmationMessageDisplayed() {
-    return true;
+    	boolean isDisplayed = confirmationMessage.isDisplayed();
+        Assert.assertTrue(isDisplayed, "Confirmation message is not displayed!");
+        return isDisplayed;
     }
     
     

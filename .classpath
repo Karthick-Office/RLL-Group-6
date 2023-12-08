@@ -38,15 +38,22 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="target/generated-sources/annotations">
+	<classpathentry kind="lib" path="C:/Users/karth/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9.jar" sourcepath="C:/Users/karth/.m2/repository/com/aventstack/extentreports/5.0.9/extentreports-5.0.9-sources.jar">
 		<attributes>
-			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.aventstack"/>
+			<attribute name="maven.artifactId" value="extentreports"/>
+			<attribute name="maven.version" value="5.0.9"/>
+			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+	<classpathentry kind="lib" path="C:/Users/karth/.m2/repository/io/cucumber/cucumber-java/7.14.1/cucumber-java-7.14.1.jar" sourcepath="C:/Users/karth/.m2/repository/io/cucumber/cucumber-java/7.14.1/cucumber-java-7.14.1-sources.jar">
 		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="io.cucumber"/>
+			<attribute name="maven.artifactId" value="cucumber-java"/>
+			<attribute name="maven.version" value="7.14.1"/>
+			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
