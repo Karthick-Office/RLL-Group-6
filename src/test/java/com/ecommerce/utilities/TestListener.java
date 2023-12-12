@@ -6,12 +6,13 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.ecommerce.tests.ContactUsTest;
+import com.ecommerce.tests.TestBase;
 
 
 
 public class TestListener implements ITestListener{
 
-	Logger log = LogManager.getLogger(ContactUsTest.class);
+	Logger log = LogManager.getLogger(TestBase.class);
 	
 	@Override
 	public void onTestStart(ITestResult result) {
